@@ -1,8 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
-import '../../config/app-config.dart';
-import '../../config/app-routes.dart';
 import '../token-manager.dart';
 
 class RefreshTokenInterceptor extends InterceptorsWrapper {
@@ -17,9 +15,9 @@ class RefreshTokenInterceptor extends InterceptorsWrapper {
 
   @override
   Future onResponse(Response response, handler) async {
-    if (response.statusCode == 403) {
+    /*if (response.statusCode == 403) {
       Navigator.of(AppConfig.navigatorKey.currentContext!).pushReplacementNamed(AppRoutes.LOGIN);
-    }
+    }*/
 
     if (response.statusCode == 401) {
       //em cada onRespose so chama a await se for 401, evitando dar await em todos statusCode
@@ -37,7 +35,7 @@ class RefreshTokenInterceptor extends InterceptorsWrapper {
         } catch (e) {}
         dio.unlock();*/
 
-        Navigator.of(AppConfig.navigatorKey.currentContext!).pushReplacementNamed(AppRoutes.LOGIN);
+        //Navigator.of(AppConfig.navigatorKey.currentContext!).pushReplacementNamed(AppRoutes.LOGIN);
       }
 
       throw Exception('Tratar refresh token');

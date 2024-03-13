@@ -1,9 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
-import '../../config/app-config.dart';
-import '../../config/app-routes.dart';
-
 class HandlerErrorInterceptor extends InterceptorsWrapper {
   final Dio dio;
 
@@ -17,9 +14,9 @@ class HandlerErrorInterceptor extends InterceptorsWrapper {
       message = err.response?.data?['messages']?.toList()?.join('/') ?? err.message;
     }
 
-    if (err.response?.statusCode == 403) {
+    /*if (err.response?.statusCode == 403) {
       Navigator.of(AppConfig.navigatorKey.currentContext!).pushReplacementNamed(AppRoutes.LOGIN);
-    }
+    }*/
 
     throw Exception(message);
   }
