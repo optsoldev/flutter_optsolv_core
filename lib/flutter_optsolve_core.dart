@@ -1,1 +1,0 @@
-library flutter_optsolve_core;

@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:flutter_optsolve_core/flutter_optsolve_core.dart';
+import 'package:flutter_optsolv_core/flutter_optsolv_core.dart';
 
 void main() {
   test('adds one to input values', () {
